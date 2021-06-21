@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/Site.css" rel="stylesheet" />
+
+</head>
+<body id="bodyPrincipal">
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                
+                @Html.ActionLink("Envios", "Index", "Envios", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown">Paqueterias <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>@Html.ActionLink("Ver Paqueterias", "Index", "Paqueteria", null, new { id = "add" })</li>
+                            <li>@Html.ActionLink("Agregar", "Create", "Paqueteria", null, new { id = "add" })</li>
+                            <li>@Html.ActionLink("Actualizar", "Index", "Paqueteria", null, new { id = "edit" })</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown">Envios <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>@Html.ActionLink("Ver productos", "Index", "envio", null, new { id = "add" })</li>
+                            <li>@Html.ActionLink("Agregar", "Create", "envio", null, new { id = "add" })</li>
+                            <li>@Html.ActionLink("Actualizar", "Index", "envio", null, new { id = "edit" })</li>
+                        </ul>
+                    </li>
+                </ul>
+                @Html.Partial("_LoginPartial1")
+            </div>
+        </div>
+    </div>
+    <div class="body-content" style="background-color:#E1E1E1;">
+        @RenderBody()
+        <hr />
+        <center>
+            <footer>
+                <p>&copy; @DateTime.Now.Year - PAQUETERIAS & ENVIOS ASP.NET</p>
+            </footer>
+        </center>
+
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

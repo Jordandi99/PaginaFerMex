@@ -1,0 +1,37 @@
+﻿@using ProyectoFerMex.Models
+@{
+    ViewBag.Title = "BuscaProd";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<br />
+<section class="container">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h2 class="text-warning text-uppercase"> Todos los productos con nombre "@ViewBag.SearchKey"</h2>
+        </div>
+    </div>
+    <br />
+    <br />
+    <center>
+        @foreach (Producto producto in ViewBag.Listado)
+        {
+            <article class="col-lg-4" style="padding-top:35px;">
+                <div class="card">
+                    <img src="~/Content/img/productos/@producto.IMAGEN" alt="Producto no disponible" class="card-img" width="150px" height="200px">
+                </div>
+                <div class="w3-container w3-center">
+                    <p><b>@producto.NOMBRE</b></p>
+                    <p>@producto.DESCRIPCION</p>
+                    <p>$@producto.PRECIO.Trim().00</p>
+                </div>
+                <div class="w3-container w3-center">
+                    <a href="@Url.Action("Agregar","Carro",new { id=producto.ID_PRODUCTO})">Comprar ahora</a>
+                </div>
+            </article>
+        }
+    </center>
+
+</section>
+

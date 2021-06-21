@@ -1,0 +1,83 @@
+﻿@model IEnumerable<ProyectoFerMex.Models.ordenCliente>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutEnvios.cshtml";
+}
+
+<div class="container">
+    <h2>Envios</h2>
+    <center>
+        <img src="~/Content/img/compras/iniCat.jpg" width="1150" height="200" />
+        <br />
+        <br />
+        <br />
+    </center>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FECHA_CREACION)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NUM_CONFIRMACION)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TOTAL)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NUM_GUIA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FECHA_ENVIO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FECHA_ENTREGA)
+            </th>
+            <th>
+                @Html.Label("Cliente")
+            </th>
+            <th>
+                @Html.Label("Paqueteria")
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FECHA_CREACION)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NUM_CONFIRMACION)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TOTAL)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NUM_GUIA)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FECHA_ENVIO)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FECHA_ENTREGA)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cliente.NOMBRE)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Paqueteria.NOMBRE)
+                </td>
+                <td>
+
+                    <button type="button" class="btn btn-outline-primary" style="background-color:lightblue; margin-right:10px"> @Html.ActionLink("Actualizar", "Edit", new { id = item.ID_ORDEN_CLIENTE }) </button>
+                    <button type="button" class="btn btn-outline-primary" style="background-color:lightcoral; margin-left:10px; margin-right:15px"> @Html.ActionLink("Eliminar", "Delete", new { id = item.ID_ORDEN_CLIENTE })</button>
+                </td>
+            </tr>
+        }
+
+    </table>
+
+</div>
+

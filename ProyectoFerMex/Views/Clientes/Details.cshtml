@@ -1,0 +1,91 @@
+﻿@model ProyectoFerMex.Models.Cliente
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Cliente</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NOMBRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOMBRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AP_PAT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AP_PAT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AP_MAT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AP_MAT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CORREO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CORREO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CALLE_T)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CALLE_T)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.COLONIA_T)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.COLONIA_T)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ESTADO_T)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ESTADO_T)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CODIGO_POSTAL_T)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CODIGO_POSTAL_T)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NUM_TARJETA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NUM_TARJETA)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_CLIENTE }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

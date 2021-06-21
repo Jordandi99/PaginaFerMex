@@ -1,0 +1,77 @@
+﻿@model IEnumerable<ProyectoFerMex.Models.Paqueteria>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutEnvios.cshtml";
+}
+
+<div class="container">
+    <h2>Paqueterias</h2>
+    <center>
+        <img src="~/Content/img/paqueterias/paquete.jpg" width="1150" height="200" />
+        <br />
+        <br />
+        <br />
+    </center>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NOMBRE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RFC)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DIRECCION)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TELEFONO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TELEFONO_SEC)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CORREO)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NOMBRE)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RFC)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DIRECCION)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TELEFONO)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TELEFONO_SEC)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CORREO)
+                </td>
+                <td>
+                    <button type="button" class="btn btn-outline-primary" style="background-color:lightblue; margin-right:15px"> @Html.ActionLink("Actualizar", "Edit", new { id = item.ID_PAQUETERIA }) </button>
+                    <button type="button" class="btn btn-outline-secondary" style="background-color:lightgreen; margin-left:15px; margin-right:15px"> @Html.ActionLink("Detalles", "Details", new { id = item.ID_PAQUETERIA })</button>
+                    <button type="button" class="btn btn-outline-success" style="background-color:lightcoral; margin-left:15px"> @Html.ActionLink("Eliminar", "Delete", new { id = item.ID_PAQUETERIA })</button>
+                </td>
+            </tr>
+        }
+
+    </table>
+
+    <center>
+        <p>
+            <button type="button" class="btn btn-outline-info" style="background-color:khaki"> @Html.ActionLink("Agregar Nueva Paqueteria", "Create")</button>
+        </p>
+    </center>
+
+</div>
+

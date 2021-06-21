@@ -1,0 +1,86 @@
+﻿@model ProyectoFerMex.Models.Producto
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutCompras.cshtml";
+}
+
+<div class="container">
+    <h2>Eliminar</h2>
+
+    <h3>¿Estas seguro de eliminar este producto?</h3>
+    <div style="background-color: #9CB694; border-radius: 5px;">
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.NOMBRE)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NOMBRE)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DESCRIPCION)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DESCRIPCION)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.PRECIO)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PRECIO)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ULT_ACTUALIZACION)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ULT_ACTUALIZACION)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.IMAGEN)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.IMAGEN)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.STOCK)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.STOCK)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Categoria.NOMBRE)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Categoria.NOMBRE)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <center>
+                <button type="submit" class="btn btn-outline-info" style="background-color:lightcoral" value="Delete"> Eliminar</button>
+                <button type="button" class="btn btn-outline-info" style="background-color:lightcyan"> @Html.ActionLink("Ver Productos", "Index")</button>
+            </center>
+        }
+        <hr />
+    </div>
+
+</div>
+

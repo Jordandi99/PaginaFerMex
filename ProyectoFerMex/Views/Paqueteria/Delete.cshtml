@@ -1,0 +1,78 @@
+﻿@model ProyectoFerMex.Models.Paqueteria
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutEnvios.cshtml";
+}
+
+<div class="container">
+    <h2>Eliminar</h2>
+
+    <h3>¿Estas seguro de eliminar esta paqueteria?</h3>
+    <div style="background-color: beige; border-radius: 5px;">
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.NOMBRE)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NOMBRE)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.RFC)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.RFC)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DIRECCION)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DIRECCION)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.TELEFONO)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TELEFONO)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.TELEFONO_SEC)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TELEFONO_SEC)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CORREO)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CORREO)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <center>
+                <button type="submit" class="btn btn-outline-info" style="background-color:lightcoral" value="Delete"> Eliminar</button>
+                <button type="button" class="btn btn-outline-info" style="background-color:khaki"> @Html.ActionLink("Ver Productos", "Index")</button>
+            </center>
+            <hr />
+        }
+    </div>
+
+</div>
+

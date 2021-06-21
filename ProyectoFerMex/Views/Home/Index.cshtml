@@ -1,0 +1,97 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@Styles.Render("~/Content/all.min.css")
+
+<section id="imgin">
+    <div class="container">
+        <div class="content-center">
+            <p id="pini" style="color:aliceblue;">
+                <b>
+                    TODO LO QUE NECESITAS
+                </b>
+                <br />
+            <p style="color: #ffffff; font-size:25px;">
+                “Planta y cría, y tendrás alegría.”
+            </p>
+            <br />
+            <a id="aComprar" href="@Url.Action("Index","Catalogo")"><b> <i class="fa fa-app-store" style="color:black"></i> COMPRAR AHORA</b></a>
+
+        </div>
+    </div>
+</section>
+
+<section id="portfolio">
+    <div class="container">
+        <div class="content-center">
+            <h1>
+                Tipos de fertilizantes
+            </h1>
+            <p style="color: #696A6B; text-align:justify; font-size:18px">
+                La forma en que los fertilizantes vienen, determina a menudo las condiciones de utilización y la eficacia del mismo.
+                Los fertilizantes se presentan en estado sólido o líquido.
+            </p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="contenedorportafolio">
+                    <div class="detallesportafolio">
+                        <h2>
+                            Fertilizantes orgánicos
+                        </h2>
+                        <p>
+                            También se les conoce como abonos y son de origen animal o vegetal.
+                        </p>
+                        <a id="aComprar2" href="@Url.Action("prodCategoria","Catalogo", new { idCat =1 })"><b>Ver Productos</b></a>
+                    </div>
+                    <img alt="Tipo 1" class="img-fluid" src="~/Content/img/home/cat1.jpg" style="width:600px;">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="contenedorportafolio">
+                    <div class="detallesportafolio">
+                        <h2 align="center">
+                            Fertilizantes químicos
+                        </h2>
+                        <p>
+                            El mayor beneficio del uso de fertilizantes químicos en la agricultura es que se obtienen resultados muy rápidamente.
+                        </p>
+                        <a id="aComprar2" href="@Url.Action("prodCategoria","Catalogo", new { idCat =2 })"><b>Ver Productos</b></a>
+                    </div>
+                    <img alt="Tipo 2" class="img-fluid" src="~/Content/img/home/cat2.jpg" style="width:600px;">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="contenedorportafolio">
+                    <div class="detallesportafolio">
+                        <h2>
+                            Biofertilizantes
+                        </h2>
+                        <p>
+                            Llamamos así al fertilizante para plantas que contiene microorganismos vivos.
+                        </p>
+                        <a id="aComprar2" href="@Url.Action("prodCategoria","Catalogo", new { idCat =3 })"><b>Ver Productos</b></a>
+                    </div>
+                    <img alt="Tipo 3" class="img-fluid" src="~/Content/img/home/cat3.png" style="width:600px;">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="contenedorportafolio">
+                    <div class="detallesportafolio">
+                        <h2>
+                            Bioestimulantes
+                        </h2>
+                        <p>
+                            Incluyen microorganismos.
+                            La diferencia respecto a los biofertilizantes es que en este caso los microorganismos no se utilizan como nutriente sino para estimular el crecimiento de las plantas.
+                        </p>
+                        <a id="aComprar2" href="@Url.Action("prodCategoria","Catalogo", new { idCat = 4 })"><b>Ver Productos</b></a>
+                    </div>
+                    <img alt="Tipo 4" class="img-fluid" src="~/Content/img/home/cat4.jpg" style="width:600px;">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

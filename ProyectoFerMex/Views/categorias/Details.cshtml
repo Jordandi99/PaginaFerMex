@@ -1,0 +1,41 @@
+﻿@model ProyectoFerMex.Models.Categoria
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutCompras.cshtml";
+}
+
+<div class="container">
+    <h2>Detalles</h2>
+
+    <div>
+        <h4>Categoria</h4>
+        <hr />
+        <dl class="dl-horizontal" style="background-color: #9CB694; border-radius: 5px;">
+            <dt>
+                @Html.DisplayNameFor(model => model.NOMBRE)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NOMBRE)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DESCRIPCION)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DESCRIPCION)
+            </dd>
+
+        </dl>
+    </div>
+    <center>
+        <p>
+            <button type="button" class="btn btn-outline-info" style="background-color:lightgreen"> @Html.ActionLink("Actualizar", "Edit", new { id = Model.ID_CATEGORIA })</button>
+            <button type="button" class="btn btn-outline-info" style="background-color:lightcyan"> @Html.ActionLink("Ver Categorias", "Index")</button>
+        </p>
+    </center>
+</div>
+
+

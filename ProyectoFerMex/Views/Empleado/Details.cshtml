@@ -1,0 +1,73 @@
+﻿@model ProyectoFerMex.Models.Empleado
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
+}
+
+<div class="container">
+    <h2>Detalles</h2>
+
+    <div>
+        <h4>Empleado</h4>
+        <hr />
+        <dl class="dl-horizontal" style="background-color: beige; border-radius: 5px;">
+            <dt>
+                @Html.DisplayNameFor(model => model.NOMBRE)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NOMBRE)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.AP_PAT)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.AP_PAT)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.AP_MAT)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.AP_MAT)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CORREO)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CORREO)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ROL)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ROL)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DEPARTAMENTO)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DEPARTAMENTO)
+            </dd>
+
+        </dl>
+    </div>
+    <center>
+        <p>
+            <button type="button" class="btn btn-outline-info" style="background-color:lightgreen"> @Html.ActionLink("Actualizar", "Edit", new { id = Model.ID_EMPLEADO })</button>
+            <button type="button" class="btn btn-outline-info" style="background-color:khaki"> @Html.ActionLink("Ver Empleados", "Index")</button>
+        </p>
+    </center>
+
+</div>
+

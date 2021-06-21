@@ -1,0 +1,98 @@
+﻿@model ProyectoFerMex.Models.ordenCliente
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutEnvios.cshtml";
+}
+<div class="container">
+    <h2>Eliminar</h2>
+
+    <h3>¿Estas seguro de eliminar este envio?</h3>
+    <div style="background-color: beige; border-radius: 5px;">
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.FECHA_CREACION)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.FECHA_CREACION)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NUM_CONFIRMACION)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NUM_CONFIRMACION)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.TOTAL)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TOTAL)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ID_DIRENTREGA)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ID_DIRENTREGA)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NUM_GUIA)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NUM_GUIA)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.FECHA_ENVIO)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.FECHA_ENVIO)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.FECHA_ENTREGA)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.FECHA_ENTREGA)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Cliente.NOMBRE)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Cliente.NOMBRE)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Paqueteria.NOMBRE)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Paqueteria.NOMBRE)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <center>
+                <button type="submit" class="btn btn-outline-info" style="background-color:lightcoral" value="Delete"> Eliminar</button>
+                <button type="button" class="btn btn-outline-info" style="background-color:khaki"> @Html.ActionLink("Ver Envios", "Index")</button>
+            </center>
+            <hr />
+        }
+    </div>
+</div>

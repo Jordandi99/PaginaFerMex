@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/Site.css" rel="stylesheet" />
+
+</head>
+<body id="bodyCompras"  style="background-color: #F9B08C">
+    <div class="navbar navbar-default navbar-fixed-top navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                
+                @Html.ActionLink("Administrador", "Index", "Admin", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown">Empleados <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>@Html.ActionLink("Ver Empleados", "Index", "Empleado", null, new { id = "add" })</li>
+                            <li>@Html.ActionLink("Agregar", "Create", "Empleado", null, new { id = "add" })</li>
+                            <li>@Html.ActionLink("Actualizar", "Index", "Empleado", null, new { id = "edit" })</li>
+                        </ul>
+                    </li>
+                </ul>
+                @Html.Partial("_LoginPartial1")
+            </div>
+        </div>
+    </div>
+    <div class="body-content">
+        @RenderBody()
+        <hr />
+        <center>
+            <footer>
+                <p>&copy; @DateTime.Now.Year - ADMINISTRADOR GENERAL ASP.NET</p>
+            </footer>
+        </center>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
