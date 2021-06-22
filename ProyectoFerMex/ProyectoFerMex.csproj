@@ -244,6 +244,11 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\brands.css" />
     <Content Include="Content\brands.min.css" />
+    <Content Include="Content\css\NavVar.css" />
+    <Content Include="Content\css\StyleEmpleados.css" />
+    <Content Include="Content\css\StyleForms.css" />
+    <Content Include="Content\css\StyleLog.css" />
+    <Content Include="Content\css\StyleRegister.css" />
     <Content Include="Content\EstilosPrincipal.css" />
     <Content Include="Content\fontawesome.css" />
     <Content Include="Content\fontawesome.min.css" />

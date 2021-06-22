@@ -6,53 +6,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
     @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    @*Scripts.Render("~/bundles/modernizr")*@
+    @Styles.Render("~/Content/css/NavVar.css")
     <link href="~/Content/Site.css" rel="stylesheet" />
     <link href="~/Content/all.min.css" rel="stylesheet" />
 </head>
 <body id="bodyPrincipal">
-    <div class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                
-                @Html.ActionLink("FerMex", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Productos", "Index", "Catalogo")</li>
-                    <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
-                    <li>@Html.ActionLink("Carrito", "Index", "Carro")</li>
-                </ul>
-                @using (Html.BeginForm("BuscaProd", "Catalogo", FormMethod.Post, new { @class = "navbar-form navbar-left" }))
-                {
-                    <div class="form-group">
-                        <input class="form-control" type="text" id="nomBuscar" name="nomBuscar" placeholder="Buscar Producto"/>
-                    </div>
-                    
-                    <button class="btn btn-default" type="submit" value="submit">Buscar</button>
-                }
-                @Html.Partial("_LoginPartial")
+    <header class="">
+        <div class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><h2 style="color:black">Fer <em>Mex</em></h2></a>
+               <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>-->        
+
+
+
+                <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+
+        @*Html.ActionLink("FerMex", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
+    </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Productos", "Index", "Catalogo")</li>
+                        <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
+                        <li>@Html.ActionLink("Carrito", "Index", "Carro")</li>
+                    </ul>
+                    @using (Html.BeginForm("BuscaProd", "Catalogo", FormMethod.Post, new { @class = "navbar-form navbar-left" }))
+                    {
+                        <div class="form-group">
+                            <input class="form-control" type="text" id="nomBuscar" name="nomBuscar" placeholder="Buscar Producto" />
+                        </div>
+
+                        <button class="btn btn-default" type="submit" value="submit">Buscar</button>
+                    }
+                    @Html.Partial("_LoginPartial")
+                </div>
             </div>
         </div>
-    </div>
-    <div class="body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <center>
-                <p>&copy; @DateTime.Now.Year - FERMEX ASP.NET</p>
-            </center>
-        </footer>
-    </div>
+        <div class="body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <center>
+                    <p>&copy; @DateTime.Now.Year - FERMEX ASP.NET</p>
+                </center>
+            </footer>
+        </div>
+    </header>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
 </body>
 </html>
